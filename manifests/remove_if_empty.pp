@@ -8,8 +8,6 @@
 #
 define common::remove_if_empty () {
 
-  validate_absolute_path($name)
-
   exec { "remove_if_empty-${name}":
     command => "rm -f ${name}",
     unless  => "test -f ${name}; if [ $? == '0' ]; then test -s ${name}; fi",

@@ -105,7 +105,6 @@ define common::mkuser (
 
   if $purge_ssh_keys != undef {
     $mypurgekey = str2bool($purge_ssh_keys)
-    validate_bool($mypurgekey)
   } else {
     $mypurgekey = false
   }
